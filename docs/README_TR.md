@@ -3,7 +3,7 @@
 
 [English](../README.md) | [Türkçe](README_TR.md)
 
-TypeScript ve TypeORM ile geliştirilmiş, MySQL ve PostgreSQL veritabanlarına standart ve read-only erişim sağlayan bir Model Context Protocol (MCP) sunucusudur.
+TypeScript ve TypeORM ile geliştirilen, MySQL ve PostgreSQL veritabanlarına standart ve read-only erişim sağlayan bir Model Context Protocol (MCP) sunucusudur.
 
 Bu proje, yapay zeka uygulamalarının veritabanı yapısını dinamik olarak keşfetmesini ve doğrulanmış SQL sorgularını MCP araçları üzerinden çalıştırmasını sağlar.
 
