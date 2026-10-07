@@ -1,0 +1,54 @@
+{
+  "name": "db-mcp-server",
+  "version": "1.0.0",
+  "description": "Read-only Model Context Protocol (MCP) server for MySQL and PostgreSQL with TypeORM and Docker.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:security": "tsx test/security.test.ts",
+    "test:adapter": "tsx test/adapter.test.ts",
+    "test:postgres": "tsx test/postgres.test.ts",
+    "test": "npm run typecheck && npm run test:security && npm run test:fixtures",
+    "docker:config": "docker compose --env-file .env.docker config",
+    "docker:up": "docker compose --env-file .env.docker up -d --wait",
+    "docker:ps": "docker compose --env-file .env.docker ps",
+    "docker:logs": "docker compose --env-file .env.docker logs --tail=100",
+    "docker:down": "docker compose --env-file .env.docker down",
+    "docker:mcp:build": "docker compose --env-file .env.docker --profile mcp build mcp-postgres",
+    "docker:mcp:mysql": "docker compose --env-file .env.docker --profile mcp run --rm -T mcp-mysql",
+    "docker:mcp:postgres": "docker compose --env-file .env.docker --profile mcp run --rm -T mcp-postgres",
+    "test:fixtures": "tsx test/fixture-files.test.ts",
+    "test:northwind": "tsx test/northwind-data.test.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "typescript",
+    "postgresql",
+    "mysql",
+    "typeorm",
+    "docker",
+    "read-only"
+  ],
+  "author": "Hatice Güzel",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.24.3",
+    "pg": "^8.23.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^1.1.1",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}

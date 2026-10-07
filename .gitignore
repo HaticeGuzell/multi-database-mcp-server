@@ -1,0 +1,22 @@
+# Local secrets and configuration
+.env
+.env.*
+!.env.example
+!.env.docker.example
+*.pem
+*.key
+
+# Dependencies, build and test outputs
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+
+# Local tooling and bundles
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.zip
+*.bak

@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "multi-database-mcp-server": {
+      "command": "C:\\PATH\\TO\\docker.exe",
+      "args": [
+        "compose",
+        "-f",
+        "C:\\PATH\\TO\\multi-database-mcp-server\\compose.yaml",
+        "--env-file",
+        "C:\\PATH\\TO\\multi-database-mcp-server\\.env.docker",
+        "--profile",
+        "mcp",
+        "run",
+        "--rm",
+        "-T",
+        "mcp-postgres"
+      ]
+    }
+  }
+}

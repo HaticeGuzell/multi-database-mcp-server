@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+.env.*
+.git
+*.zip
+test
+docker
+docs
+README*
+
+.github
